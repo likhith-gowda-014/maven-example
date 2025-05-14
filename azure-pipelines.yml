@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+jobs:
+- job: Build
+  steps:
+    - task: Maven@4
+      displayName: 'Maven@4: clean package'
+      inputs:
+        mavenPOMFile: 'pom.xml'
+        goals: 'clean package'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
+    # Now publish the single JAR artifact
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish JAR artifact'
+      inputs:
+        PathtoPublish: 'target/maven-junit5-example-1.0-SNAPSHOT.jar'
+        ArtifactName: 'my-app-jar'
+        publishLocation: 'Container'
