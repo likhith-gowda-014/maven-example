@@ -19,6 +19,6 @@ jobs:
     - task: PublishBuildArtifacts@1
       displayName: 'Publish JAR artifact'
       inputs:
-        PathtoPublish: 'target/maven-junit5-example-1.0-SNAPSHOT.jar'
+        PathtoPublish: 'target/maven-example-1.0-SNAPSHOT.jar'
         ArtifactName: 'my-app-jar'
         publishLocation: 'Container'
