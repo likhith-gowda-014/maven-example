@@ -1,0 +1,14 @@
+---
+- name: Basic server setup
+  hosts: localhost
+  become: yes
+  become_user: root
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install curl
+      apt:
+        name: curl
+        state: present
