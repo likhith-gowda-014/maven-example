@@ -1,0 +1,16 @@
+sudo systemctl stop jenkins
+sudo rm -rf /var/lib/jenkins
+sudo mkdir /var/lib/jenkins
+sudo chown -R jenkins:jenkins /var/lib/jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+sudo cat 
+
+
+sudo update-alternatives --config java
+sudo apt install openjdk-17-jdk -y
+
+ansible-playbook -i hosts.ini setup.yml -k
+
+set -xe
+ansible-playbook -i "$WORKSPACE/hosts.ini" "$WORKSPACE/deploy.yml"
