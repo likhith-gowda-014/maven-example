@@ -1,8 +1,7 @@
 ---
-- name: Basic server setup
-  hosts: localhost
+- name: Basic Server Setup
+  hosts: local
   become: yes
-  become_user: root
   tasks:
     - name: Update apt cache
       apt:
