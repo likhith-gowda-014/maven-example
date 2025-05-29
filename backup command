@@ -14,3 +14,7 @@ ansible-playbook -i hosts.ini setup.yml -k
 
 set -xe
 ansible-playbook -i "$WORKSPACE/hosts.ini" "$WORKSPACE/deploy.yml"
+
+**/target/surefire-reports/*.xml
+
+target/*.jar
