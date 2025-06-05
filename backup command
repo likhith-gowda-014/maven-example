@@ -18,3 +18,6 @@ ansible-playbook -i "$WORKSPACE/hosts.ini" "$WORKSPACE/deploy.yml"
 **/target/surefire-reports/*.xml
 
 target/*.jar
+
+sudo visudo
+jenkins ALL=(ALL) NOPASSWD: ALL
