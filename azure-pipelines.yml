@@ -19,6 +19,6 @@ jobs:
     - task: PublishBuildArtifacts@1
       displayName: 'Publish JAR artifact'
       inputs:
-        PathtoPublish: 'target/maven-example-*.jar'
+        PathtoPublish: 'maven/target/maven-example-*.yml'
         ArtifactName: 'my-app-jar'
         publishLocation: 'Container'
