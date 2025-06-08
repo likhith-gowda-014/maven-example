@@ -4,20 +4,11 @@ sudo mkdir /var/lib/jenkins
 sudo chown -R jenkins:jenkins /var/lib/jenkins
 sudo systemctl start jenkins
 sudo systemctl status jenkins
-sudo cat 
-
-
-sudo update-alternatives --config java
-sudo apt install openjdk-17-jdk -y
 
 ansible-playbook -i hosts.ini setup.yml -k
-
-set -xe
-ansible-playbook -i "$WORKSPACE/hosts.ini" "$WORKSPACE/deploy.yml"
 
 **/target/surefire-reports/*.xml
 
 target/*.jar
 
 sudo visudo
-jenkins ALL=(ALL) NOPASSWD: ALL
